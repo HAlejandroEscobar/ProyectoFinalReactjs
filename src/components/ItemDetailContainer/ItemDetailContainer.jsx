@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProduct } from '../../asyncMock';
+import CartContext from '../../context/CartContext'
 
 
 
@@ -9,6 +10,13 @@ function ItemDetailContainer ()  {
     const [product, setProduct] = useState ({})
 
     const  {id} = useParams();
+    
+    const[,,addItem] = useContext(CartContext)
+
+    const handleClick=()=>  {
+      addItem(prod)
+    }
+
 
     useEffect  (() => {
         setProduct (getProduct(id))
@@ -23,7 +31,7 @@ function ItemDetailContainer ()  {
             <p style={{height: '50px'}}>Precio: {product.price}</p>
             <button  style={{width:'20px'}}>+</button><button style={{width:'20px'}}>-</button><input type="text" />
             <p style={{height: '10px'}}></p>
-            <button style={{height: '50px'}}>Comprar</button>
+            <button style={{height: '50px'}} onClick={addItem}>Comprar</button>
         </article>
     </>
   )

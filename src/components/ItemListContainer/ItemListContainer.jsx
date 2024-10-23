@@ -4,7 +4,6 @@ import Item from '../Item/Item';
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom';
 
-
 function ItemListContainer ()  {
 
     const {category} = useParams();
@@ -29,19 +28,17 @@ function ItemListContainer ()  {
     }, [category])
 
 
-
     return (
         <>
         <section style={{display:'flex', gap: 50, margin: 20, padding: 5, border:' solid, black, 10px'}}>
         {products.map(product  =>  <Item key={product.id} product={product}/>)}
 
-
         </section>
     
-
 
     </>
     )
   }
   
   export default ItemListContainer
+

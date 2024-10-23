@@ -11,17 +11,14 @@ import CartView from './components/CartView/CartView'
 import ProductsComponent from './components/ProductsComponent/ProductsComponent'
 import AddOrders from './components/ProductsComponent/AddOrders'
 import CheckOut from './components/CheckOut/CheckOut'
-import CartContextProvider from './context/CartContext'
+import { CartProvider } from './context/CartContext'
 
 
 function App() {
     return (
     <>
       <BrowserRouter> 
-        
-        {/* falta agregar la ruta  del context CartContextProvider */}
-
-
+        <CartProvider>
          <NavBar/> 
             <Routes>
               <Route exact path='/' element={<ItemListContainer/>} />
@@ -30,13 +27,15 @@ function App() {
 
               <Route exact path="/cart" element={<CartView/>} />
               <Route exact path="/checkout" element={<CheckOut/>} />
+            </Routes>
 
-        </Routes>
-        <h1>PROBANDO FIREBASE</h1>
-        <ProductsComponent/>
-        <hr />
-        <AddOrders/>
-       
+
+              <h1>PROBANDO FIREBASE</h1>
+              <ProductsComponent/>
+              <hr />
+              <AddOrders/>
+
+        </CartProvider>
       </BrowserRouter>
       
   </>

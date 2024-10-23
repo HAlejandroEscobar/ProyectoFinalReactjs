@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import  {getProducts}  from  '../firebase/firebase'
+import CartContext from '../../context/CartContext';
 
 // , getSingleProduct
 
 function ProductsComponent () {
   
+    const[,,addItem] = useContext(CartContext)
+
+    const handleClick=()=>  {
+      addItem(prod)
+    }
+
+
     const [myProds, setMyProds]  = useState([]);
     // const  [singleProd, setSingleProd]  = useState (null);
 
@@ -42,6 +50,7 @@ function ProductsComponent () {
             <p>Precio: ${prod.price}</p>
             <p>Categoria: {prod.category}</p>
             <p>Stock: {prod.stock}</p>
+            <button onClick={addItem}>Buy</button>
       
       
            </article>)}   
