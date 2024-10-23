@@ -5,7 +5,7 @@
     font-size: 20px;
 }
 
-.header{
+.header {
     background-color: grey;
     display: flex;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     padding: 50px 30px;
 }
 
-.header .logo{
+.header .logo {
     cursor: pointer;
 }
 
@@ -22,27 +22,27 @@
     transform: scale(1.2);
 }
 
-.header .navlinks{
+.header .navlinks {
     list-style: none;
 }
 
-.header .navlinks li{
+.header .navlinks li {
     display: inline-block;
     padding: 0 40px;
 }
 
-.header .navlinks a{
+.header .navlinks a {
     color: black;
     text-decoration: none;
 }
 
-img{
+img {
     height: 70px;
     width: auto;
     transition: all 0.3s;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     list-style: none;
