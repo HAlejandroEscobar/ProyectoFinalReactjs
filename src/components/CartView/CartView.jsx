@@ -5,6 +5,8 @@ import CartContext from '../../context/CartContext';
 function CartView() {
   const { cart, removeItem, addItem, totalPrice } = useContext(CartContext);
 
+  const PrecioTotal = totalPrice();
+
   const increaseQuantity = (item) => {
     addItem({ ...item, quantity: 1 });
   };
@@ -83,12 +85,22 @@ function CartView() {
                     onClick={() => removeItem(item.id)}>
                     Eliminar
                   </button>
+                  
                 </div>
+                
               </div>
+              
             </li>
+            
           ))}
         </ul>
       )}
+      <p style={{height:"30px"
+      }}>
+        
+        Total= {PrecioTotal}</p>
+
+
       <Link to='/CheckOut'>
         <button>Ir al pago</button>
       </Link>

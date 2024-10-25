@@ -1,3 +1,5 @@
+import AddOrders from "./AddOrders"
+
 
 function CheckOut ()  {
   return (
@@ -7,7 +9,7 @@ function CheckOut ()  {
         <p>E-mail: </p>
         <p>Telefono: </p>
     
-    
+      <AddOrders></AddOrders>
     
     </>
   )

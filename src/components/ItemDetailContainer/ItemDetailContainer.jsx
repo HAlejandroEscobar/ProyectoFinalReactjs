@@ -53,7 +53,7 @@ function ItemDetailContainer() {
           <h1 style={{ height: '50px' }}>{product.title}</h1>
           <img style={{ height: '150px' }} src={product.image} alt={product.title} />
           <p style={{ height: '50px' }}>Descripcion: {product.description}</p>
-          <p style={{ height: '50px' }}>Precio: {product.price}</p>
+          <p style={{ height: '50px' }}>Precio: US$  {product.price} </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <button onClick={decreaseQuantity} style={{ width: '30px' }}>
               -
